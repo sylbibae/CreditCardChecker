@@ -60,12 +60,12 @@ console.log(validateCred(mystery5)); //true
  * @returns list of invalid credit card numbers
  */
 const findInvalidCards = cards => {
-    let valid = false;
     let invalidCards = []
+
     for (let i = 0; i < cards.length; i++) {
-        valid = validateCred(cards[i])
-        if (!valid) {
-            invalidCards[i] = cards[i]
+        let val = cards[i];
+        if (!validateCred(cards[i])) {
+            invalidCards.push(val);
         }
     }
     return invalidCards;
